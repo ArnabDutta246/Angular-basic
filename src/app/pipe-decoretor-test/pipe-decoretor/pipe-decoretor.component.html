@@ -1,0 +1,32 @@
+<div class="jumbotron text-center">
+<p class="h3 font-weight-bold">{{ this.session.name}}</p>
+<p class="">{{ this.session.org}}</p>
+<p class="text-danger">{{ this.session.plan}}</p>
+</div>
+
+<div class="container">
+
+
+<div class="row">
+<div class="col-12 my-2" *ngFor="let feature of session.features">
+  <div class="card bg-success" *ngIf="feature | testpipe;else elsePart">
+    <div class="card-body">
+      <h5>{{ feature.name}}</h5>
+      <p>{{feature.visibility}}</p>
+    </div>
+  </div>
+
+  <ng-template #elsePart>
+    <div class="col-12 card bg-danger my-2">
+      <h5>{{ feature.name}}</h5>
+      <p>{{feature.visibility}}</p>
+      <div class="card-body">
+        <button class="btn btn-sm btn-light">Try this</button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+</div>
+</div>
