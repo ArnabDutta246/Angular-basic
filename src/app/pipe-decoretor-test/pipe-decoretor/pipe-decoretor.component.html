@@ -1,12 +1,11 @@
-<div class="jumbotron text-center">
-<p class="h3 font-weight-bold">{{ this.session.name}}</p>
-<p class="">{{ this.session.org}}</p>
-<p class="text-danger">{{ this.session.plan}}</p>
+<div class="jumbotron text-center"><div class="row">
+  <div class="col-4"><p class="h5 font-weight-bold">Name: {{ this.session.name}}</p></div>
+  <div class="col-4"><p class="h5">Org: {{ this.session.org}}</p></div>
+  <div class="col-4"><p class="h5 text-danger">Plan: {{ this.session.plan}}</p></div>
+</div>
 </div>
 
 <div class="container">
-
-
 <div class="row">
 <div class="col-12 my-2" *ngFor="let feature of session.features">
   <div class="card bg-success" *ngIf="feature | testpipe;else elsePart">

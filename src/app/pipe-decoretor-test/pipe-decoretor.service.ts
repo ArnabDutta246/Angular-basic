@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+//import { PipeDecoretorModuleModule } from './pipe-decoretor-module.module';
 
 @Injectable({
   providedIn: 'root'
+  //providedIn:PipeDecoretorModuleModule
 })
 export class PipeDecoretorService {
  userCredential = [
@@ -39,7 +41,7 @@ export class PipeDecoretorService {
   ]
   
 
-  loggedId = 1;
+  loggedId = 0;
   public constructor( ) {
      
   }

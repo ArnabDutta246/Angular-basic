@@ -10,9 +10,12 @@ const routes:Routes = [
   {
     path:'renderer',loadChildren:'../renderer/renderer.module#RendererModule'
   },
-  {
+  // {
+  //   path:'test',loadChildren:'../pipe-decoretor-test/pipe-decoretor-module.module#PipeDecoretorModuleModule'
+  // },
+    {
     path:'test',component:PipeDecoretorComponent
-  }
+  },
 ]
 
 

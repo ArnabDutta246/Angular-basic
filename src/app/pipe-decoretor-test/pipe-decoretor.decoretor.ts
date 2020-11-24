@@ -1,6 +1,6 @@
 import { Type } from '@angular/core';
-import { PipeDecoretorModuleModule } from './pipe-decoretor-module.module'
-import { PipeDecoretorService } from './pipe-decoretor.service'
+import { PipeDecoretorModuleModule } from './pipe-decoretor-module.module';
+import { PipeDecoretorService } from './pipe-decoretor.service';
 
 export function PipeDecorator(){
   return function (target:Object, key:string | symbol){
@@ -13,8 +13,8 @@ export function PipeDecorator(){
     // console.log(service.userCredential);
 
     // Object.defineProperty(target,key,{
-    //   configurable:false,
-    //   enumerable:false,
+    //   configurable:true,
+    //   enumerable:true,
     //   get:() =>{
     //     console.log(service.userCredential);
     //     return service.userCredential;
