@@ -10,6 +10,7 @@ import { TestPipe } from './pipe-decoretor-test/pipe.pipe';
 import { PipeDecoretorComponent } from './pipe-decoretor-test/pipe-decoretor/pipe-decoretor.component';
 import { DirectiveTestModule } from './directive-test/directive-test.module';
 import { UserPlanDirective } from './directive-test/directive-test.directive';
+import { AuthGuardService } from './directive-test/authguard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { UserPlanDirective } from './directive-test/directive-test.directive';
   exports:[
    // UserPlanDirective
   ],
-  providers: [],
+  providers: [
+   // AuthGuardService
+  ],
   bootstrap: [AppComponent],
   //entryComponent: [PipeDecoretorComponent]
 })

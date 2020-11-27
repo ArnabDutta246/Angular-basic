@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Routes,RouterModule} from '@angular/router';
 import { PipeDecoretorComponent } from '../pipe-decoretor-test/pipe-decoretor/pipe-decoretor.component';
+import { NoAccessComponent } from '../directive-test/no-access/no-access.component';
 
 const routes:Routes = [
   {
@@ -15,6 +16,9 @@ const routes:Routes = [
   // },
     {
     path:'directive',loadChildren:'../directive-test/directive-test.module#DirectiveTestModule'
+    },
+    { 
+      path: 'no-access', component: NoAccessComponent,
     },
     {
     path:'test',component:PipeDecoretorComponent

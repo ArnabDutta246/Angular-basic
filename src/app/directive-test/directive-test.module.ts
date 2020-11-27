@@ -6,17 +6,28 @@ import { MeetingComponent } from './meeting/meeting.component';
 import { RiskComponent } from './risk/risk.component';
 import { IssueComponent } from './issue/issue.component';
 import { UserPlanDirective } from './directive-test.directive';
+import { AuthGuardService } from './authguard.service';
+import { NoAccessComponent } from './no-access/no-access.component';
 
 const routes:Routes = [
     {
-    path:'', redirectTo:'/meeting',pathMatch:'full'
+    path:'', redirectTo:'/directive/meeting',pathMatch:'full'
   },
   {
     path:'', component:ComponentComponent,
     children: [
-          { path: 'meeting', component: MeetingComponent },
-          { path: 'risk', component: RiskComponent },
-          { path: 'issue', component: IssueComponent },
+          { path: 'meeting', component: MeetingComponent,
+            canActivate: [AuthGuardService],
+            data: {page: ['meeting']}
+            },
+          { path: 'risk', component: RiskComponent,
+            canActivate: [AuthGuardService],
+            data: {page: ['risk']}
+           },
+          { path: 'issue', component: IssueComponent,
+            canActivate: [AuthGuardService],
+            data: {page: ['issue']}
+           },
         ]
   },
 ]
@@ -27,7 +38,8 @@ const routes:Routes = [
     MeetingComponent,
     RiskComponent,
     IssueComponent,
-    UserPlanDirective
+    UserPlanDirective,
+    NoAccessComponent
   ],
   imports: [
     CommonModule,
@@ -40,6 +52,9 @@ const routes:Routes = [
     IssueComponent, 
     RouterModule,
     UserPlanDirective 
+  ],
+  providers:[
+    AuthGuardService
   ]
 })
 export class DirectiveTestModule { }
