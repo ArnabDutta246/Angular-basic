@@ -5,7 +5,7 @@ import { PipeDecoretorComponent } from '../pipe-decoretor-test/pipe-decoretor/pi
 
 const routes:Routes = [
   {
-     path:'',redirectTo:'test',pathMatch:'full'
+     path:'',redirectTo:'directive',pathMatch:'full'
   },
   {
     path:'renderer',loadChildren:'../renderer/renderer.module#RendererModule'
@@ -13,6 +13,9 @@ const routes:Routes = [
   // {
   //   path:'test',loadChildren:'../pipe-decoretor-test/pipe-decoretor-module.module#PipeDecoretorModuleModule'
   // },
+    {
+    path:'directive',loadChildren:'../directive-test/directive-test.module#DirectiveTestModule'
+    },
     {
     path:'test',component:PipeDecoretorComponent
   },

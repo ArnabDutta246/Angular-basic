@@ -1,0 +1,66 @@
+<div class="container">
+
+
+<div class="row">
+  <div class="col-4 bg-light pt-5" style="height: 100vh;">
+   <div class="row text-center">
+     <div class="col-12">
+       <a routerLink="meeting">
+         Meeting
+       </a>
+     </div>
+     <hr>
+    <div class="col-12">
+      <a routerLink="risk">
+        Risk
+      </a>
+    </div>
+    <hr>
+    <div class="col-12">
+      <a routerLink="issue">
+        Issue
+      </a>
+    </div>
+   </div>
+  </div>
+  <div class="col-8">
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col-6">
+             <h5>User name : {{ session.name }}</h5>
+            </div>
+            <div class="col-6 text-success">
+             <h5>Plan : {{ session.plan }}</h5> 
+            </div>
+            <hr class="my-4">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-6 p-3">
+                  <span class="text-muted"> Service : </span>
+                  <br>
+                  <ul class="list-group" *ngFor="let service of session.services;let i=index">
+                    <li>{{ service.name }} visibility <span class="text-primary">{{ service.visibility }}</span></li>
+                  </ul>
+                </div>
+                <div class="col-6 border-left p-3">
+                  <span class="text-muted"> Features : </span>
+                  <br>
+                  <ul class="list-group" *ngFor="let feature of session.features;let i=index">
+                    <li>{{ feature.name }} visibility <span class="text-primary">{{ feature.visibility }}</span> </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+</div>
+</div>
